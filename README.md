@@ -1,0 +1,1 @@
+# Internal protocol buffer definition
