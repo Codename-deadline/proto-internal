@@ -30,43 +30,47 @@ message LinkMessengerAccountRequest {
 
 message RegisterChatRequest {
   int64 bot_id = 1;
-  int64 issuer_account_id = 2;
+  int64 issuer_messenger_account_id = 2;
   ProtoMessenger messenger = 3;
   int64 messenger_chat_id = 4;
   string chat_title = 5;
   string language = 6;
+  bool issuer_has_messenger_chat_admin_rights = 7;
 }
 
 message DeregisterChatRequest {
   int64 messenger_chat_id = 1;
   ProtoMessenger messenger = 2;
+  int64 issuer_messenger_account_id = 3;
+  bool issuer_has_messenger_chat_admin_rights = 4;
 }
 
 message SubscribeToRequest {
-  int64 issuer_account_id = 1;
+  int64 issuer_messenger_account_id = 1;
   int64 target_id = 2;
   int64 messenger_chat_id = 3;
   ProtoMessenger messenger = 4;
 }
 
 message UnsubscribeFromRequest {
-  int64 issuer_account_id = 1;
+  int64 issuer_messenger_account_id = 1;
   int64 target_id = 2;
   int64 messenger_chat_id = 3;
   ProtoMessenger messenger = 4;
 }
 
 message UpdateChatInfoRequest {
-  int64 issuer_account_id = 1;
+  int64 issuer_messenger_account_id = 1;
   optional Locale language = 2;
   optional string title = 3;
   int64 messenger_chat_id = 4;
   ProtoMessenger messenger = 5;
+  bool issuer_has_messenger_chat_admin_rights = 6;
 }
 
 message UnsubscribeFromAllRequest {
   int64 messenger_chat_id = 1;
-  int64 issuer_account_id = 2;
+  int64 issuer_messenger_account_id = 2;
   ProtoMessenger messenger = 3;
 }
 
