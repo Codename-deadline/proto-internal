@@ -26,6 +26,8 @@ service IntegrationService {
 message LinkMessengerAccountRequest {
   string request_id = 1;
   bool is_accepted = 2;
+  int64 messenger_account_id = 3;
+  ProtoMessenger messenger = 4;
 }
 
 message RegisterChatRequest {
@@ -50,6 +52,7 @@ message SubscribeToRequest {
   int64 target_id = 2;
   int64 messenger_chat_id = 3;
   ProtoMessenger messenger = 4;
+  bool issuer_has_messenger_chat_admin_rights = 5;
 }
 
 message UnsubscribeFromRequest {
@@ -57,6 +60,7 @@ message UnsubscribeFromRequest {
   int64 target_id = 2;
   int64 messenger_chat_id = 3;
   ProtoMessenger messenger = 4;
+  bool issuer_has_messenger_chat_admin_rights = 5;
 }
 
 message UpdateChatInfoRequest {
@@ -72,6 +76,7 @@ message UnsubscribeFromAllRequest {
   int64 messenger_chat_id = 1;
   int64 issuer_messenger_account_id = 2;
   ProtoMessenger messenger = 3;
+  bool issuer_has_messenger_chat_admin_rights = 4;
 }
 
 message GeneralResponse {
