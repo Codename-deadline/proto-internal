@@ -38,6 +38,7 @@ message RegisterChatRequest {
   string chat_title = 5;
   string language = 6;
   bool issuer_has_messenger_chat_admin_rights = 7;
+  string time_zone = 8;
 }
 
 message DeregisterChatRequest {
@@ -70,6 +71,7 @@ message UpdateChatInfoRequest {
   int64 messenger_chat_id = 4;
   ProtoMessenger messenger = 5;
   bool issuer_has_messenger_chat_admin_rights = 6;
+  optional string time_zone = 7;
 }
 
 message UnsubscribeFromAllRequest {
